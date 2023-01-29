@@ -1,0 +1,16 @@
+<p id="notice"> <%= notice %> </p>
+
+<h1>Admins#show</h1>
+<p>Find me in app/views/admins/show.html.erb</p>
+
+
+
+<p> salary is :
+    <%= @admin.salary %>
+</p>
+<p> age is :
+    <%= @admin.age %>
+</p>
+
+<%= link_to 'Edit', edit_admin_path %>
+<%= link_to 'back', admins_path %>

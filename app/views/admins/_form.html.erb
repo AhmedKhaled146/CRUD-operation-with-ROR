@@ -1,0 +1,13 @@
+<%= form_for(admin) do |f| %>
+    <div class="field">
+        <%= f.label :age %>
+        <%= f.number_field :age %>
+    </div>
+    <div class="field">
+        <%= f.label :salary %>
+        <%= f.number_field :salary %>
+    </div>
+    <div class="action">
+        <%= f.submit %>
+    </div>
+<% end %>

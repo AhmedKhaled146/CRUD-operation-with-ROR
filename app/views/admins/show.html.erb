@@ -1,16 +1,42 @@
-<p id="notice"> <%= notice %> </p>
 
-<h1>Admins#show</h1>
-<p>Find me in app/views/admins/show.html.erb</p>
+<div class="alert alert-primary" role="alert">
+    <p> <%= notice %> </p>
+</div>
+<div class="container">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2><b><%= @admin.Fname %></b> </b> <%= @admin.Lname %></p></h2>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Age</th>
+                        <th>Salary</th>
+                        <th>Position</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><%= @admin.Fname %></td>
+                        <td><%= @admin.Lname %></td>
+                        <td><%= @admin.age %></td>
+                        <td><%= @admin.salary %></td>
+                        <td><%= @admin.position %></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-outline-primary" ><%= link_to 'Edit', edit_admin_path %></button>
+            <button type="button" class="btn btn-outline-primary"><%= link_to 'back', admins_path %></button>
+        </div>
+    </div>
+</div>
 
 
 
-<p> salary is :
-    <%= @admin.salary %>
-</p>
-<p> age is :
-    <%= @admin.age %>
-</p>
-
-<%= link_to 'Edit', edit_admin_path %>
-<%= link_to 'back', admins_path %>

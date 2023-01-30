@@ -1,13 +1,35 @@
-<%= form_for(admin) do |f| %>
-    <div class="field">
-        <%= f.label :age %>
-        <%= f.number_field :age %>
+<div class="container">
+    <div class="table-responsive">
+        <%= form_for(admin) do |f| %>
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="first name">First Name</label>
+                        <%= f.text_field :Fname, type: "text", class: "form-control", placeholder: "First name"%>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="Last name">Last name</label>
+                        <%= f.text_field :Lname, type: "text", class: "form-control", placeholder: "Last name"%>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="first name"> Age</label>
+                        <%= f.number_field :age, type: "number", class: "form-control", placeholder: "age"%>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="Salary">Salary</label>
+                        <%= f.text_field :salary, type: "number", class: "form-control", placeholder: "Salary"%>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="Position">Position</label>
+                        <%= f.text_field :position, type: "number", class: "form-control", placeholder: "Position"%>
+                    </div>
+                </div>
+                <div class="d-grid gap-2 d-md-block">
+                    <%= f.submit class: "btn btn-primary" %>
+                    <%= link_to 'show', @admin,  class: "btn btn-primary" %>
+                    <%= link_to 'back', admins_path, class: "btn btn-primary"%>
+                </div>
+            </form>
+        <% end %>
     </div>
-    <div class="field">
-        <%= f.label :salary %>
-        <%= f.number_field :salary %>
-    </div>
-    <div class="action">
-        <%= f.submit %>
-    </div>
-<% end %>
+</div>

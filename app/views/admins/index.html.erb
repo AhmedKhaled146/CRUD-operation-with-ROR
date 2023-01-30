@@ -1,38 +1,42 @@
-<body>
-    <div class="container">
-        <div class="table-responsive">
-            <div class="table-wrapper">
-                <div class="table-title">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <h2>view <b>Users</b></h2>
-                        </div>
-                        <div class="col-xs-6">
-                            <%= link_to 'New User', new_admin_path, class: "btn btn-success", 'data-toggle': "modal" %>
-                        </div>
+<div class="container">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h2><b>Users</b></h2>
+                    </div>
+                    <div class="col-xs-6">
+                        <%= link_to 'New User', new_admin_path, class: "btn btn-success", 'data-toggle': "modal" %>
                     </div>
                 </div>
-                <table class="table table-striped table-hover">
-					<thead>
-						<tr>
-							<th>age</th>
-							<th>salary</th>
-                            <th>action</th>
-						</tr>
-					</thead>
-					<tbody>
-                        <% @admin.each do |admin| %>
-                            <tr>
-                                <td><%= admin.age %></td>
-                                <td><%= admin.salary %></td>
-                                <td><%= link_to 'Show', admin %></td>
-                                <td><%= link_to 'Edit', edit_admin_path(admin) %></td>
-                                <td><%= button_to 'Remove', admin, method: 'delete' %>
-                            </tr>
-                        <% end %>
-					</tbody>
-				</table>
             </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Fname</th>
+                        <th>Lname</th>
+                        <th>age</th>
+                        <th>salary</th>
+                        <th>position</th>
+                        <th>action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @admin.each do |admin| %>
+                        <tr>
+                            <td><%= admin.Fname %></td>
+                            <td><%= admin.Lname %></td>
+                            <td><%= admin.age %></td>
+                            <td><%= admin.salary %></td>
+                            <td><%= admin.position %></td>
+                            <td><%= link_to 'Show', admin %></td>
+                            <td><%= link_to 'Edit', edit_admin_path(admin) %></td>
+                            <td><%= button_to 'Remove', admin, method: 'delete' %>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
         </div>
     </div>
-</body>
+</div>
